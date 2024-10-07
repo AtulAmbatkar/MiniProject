@@ -1,0 +1,39 @@
+<div class="parent">
+    <div class="container">
+    <h2>User-List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First_Name</th>
+          <th>Last_Name</th>
+          <th>Phone_Number</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList; let i = index">
+          <td>{{ user.id }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{  user.address}}</td>
+          <td>
+            <button   class ="btn btn-warning btn-sm" (click)="onEdit(user)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn btn-sm">
+        <button class="btn btn-warning btn-sm" (click)="addUser()">Add-User</button>
+    </div>
+    <div class="btn btn-sm">
+        <button class="btn btn-warning btn-sm" routerLink="/dashboard">Dashboard</button>
+    </div>
+  </div>
+</div>
+  
